@@ -1,0 +1,21 @@
+<h1>Facturas / Ventas</h1>
+
+<table class="table table-bordered">
+  <thead bgcolor="#28a745">
+    <tr>
+        <th>Número Venta</th>
+        <th>Fecha de la venta</th>
+        <th>Total de la venta</th>
+        <th>Id Cliente</th>
+      </tr>
+    </thead>
+  <tr *ngFor="let pd of service.list">
+      <td (click)="populateForm(pd)">{{pd.idVenta}}</td>
+    <td (click)="populateForm(pd)">{{pd.fechaVenta}}</td>
+    <td (click)="populateForm(pd)">{{pd.totalVenta}}</td>
+    <td (click)="populateForm(pd)">{{pd.idCliente}}</td>
+    <td>
+      <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.idVenta)"></i>
+    </td>
+  </tr>
+</table>

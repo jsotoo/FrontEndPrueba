@@ -1,0 +1,23 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="form-group">
+    
+    <input type="hidden" class="form-control"  name="idVenta"  [value]="service.formData.idVenta" >
+    
+  </div>
+  <div class="form-group">
+    <label for="fechaVenta">Fecha Venta</label>
+    <input type="date" class="form-control" name="fechaVenta" #fechaVenta="ngModel" [(ngModel)]="service.formData.fechaVenta" >
+  </div>
+  <div class="form-group">
+    <label for="totalVenta">Total Venta</label>
+    <input type="number" class="form-control" name="totalVenta" #totalVenta="ngModel" [(ngModel)]="service.formData.totalVenta">
+  </div>
+  <div class="form-group">
+    <label for="idCliente">ID Cliente</label>
+    <input type="number" class="form-control" name ="idCliente" #idCliente="ngModel"  [(ngModel)]="service.formData.idCliente">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-check"></i> Crear</button>
+  </div>
+</form>
